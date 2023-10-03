@@ -42,7 +42,7 @@ class DistanceController extends Controller
         $exportData = DB::table('driving_entries')->select('licencePlate', 'drivingDate', 'driver', 'distance')->where('drivingDate', '=', $data)->orderBy('licencePlate')->orderBy('distance')->get();
 
         $handle = fopen('export.csv', 'w'); //writing only to csv
-        fputcsv($handle, array('Licenseplate', 'Driver', 'Mileage', 'Driven Distance', 'Date'));
+        fputcsv($handle, array('Licenceplate', 'Driver', 'Mileage', 'Date'));
 
 
         foreach($exportData as $row) {
